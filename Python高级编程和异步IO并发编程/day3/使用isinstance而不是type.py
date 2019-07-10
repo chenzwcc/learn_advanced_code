@@ -20,8 +20,8 @@ class B(A):
 
 b = B()
 
-print(isinstance(b, B))
-print(isinstance(b, A))
+print(isinstance(b, B))  # True
+print(isinstance(b, A))  # True
 
-print(type(b) is B)
-print(type(b) is A)
+print(type(b) is B)  # True
+print(type(b) is A)  # False

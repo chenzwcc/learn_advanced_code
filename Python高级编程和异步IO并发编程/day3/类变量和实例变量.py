@@ -23,3 +23,5 @@ print(a.z is A.z)
 
 a.z = 100  # 相当于重新给a实例添加了一个z属性 
 print(a.z, A.z)
+
+
