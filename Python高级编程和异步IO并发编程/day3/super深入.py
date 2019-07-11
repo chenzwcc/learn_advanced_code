@@ -2,6 +2,10 @@
 # 创建用户  ：chenzhengwei
 # 创建日期  ：2019/7/10 下午3:48
 
+"""
+super执行顺序：可以调用类的__mro__获取
+"""
+
 
 class A(object):
     def go(self):
@@ -54,28 +58,28 @@ d = D()
 e = E()
 print(D.__mro__)
 # 说明下列代码的输出结果
-a.go()  # go a go
-print('--------')
-b.go()  # go a go go b go
-print('--------')
-c.go()  # go a go go c go
-print('--------')
-d.go()
-print('--------')
-e.go()
-print('--------')
-# a.stop()
+# a.go()  # go a go
 # print('--------')
-# b.stop()
+# b.go()  # go a go go b go
 # print('--------')
-# c.stop()
+# c.go()  # go a go go c go
 # print('--------')
-# d.stop()
+# d.go()
 # print('--------')
-# e.stop()
-# print(D.mro())
-# a.pause()
-# b.pause()
-# c.pause()
-# d.pause()
-# e.pause()
+# e.go()
+# print('--------')
+# a.stop() # a stop
+# print('--------')
+# b.stop() # a stop
+# print('--------')
+# c.stop() # a stop c stop
+# print('--------')
+# d.stop() # a c d
+# print('--------')
+# e.stop() # a c
+print(D.mro())
+# a.pause() # Not Implemented
+# b.pause() #Not Implemented
+# c.pause() #Not Implemented
+# d.pause() #wait D wait!
+# e.pause() #Not Implemented
